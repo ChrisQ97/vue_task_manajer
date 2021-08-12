@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header/>
-    <Tasks :tasks="tasks"/>
+    <Tasks @delete-task="deleteTask" :tasks="tasks"/>
   </div>
 </template>
 
@@ -37,10 +37,18 @@ export default {
       {
         id: 3,
         text: 'Meeting at school',
-        day: 'August 5th at 9:00 am'
+        day: 'August 5th at 9:00 am',
+        reminder: true
       }
       ]
     },
+    methods: {
+      deleteTask(id){
+        if(confirm('Are you sure?')){
+          this.tasks = this.tasks.filter((task) => task.id !== id);
+        }
+      }
+    }
 }
 </script>
 
