@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<h1>Task Manager</h1>
-		<Button/>
+		<Button @toggle-add-task="$emit('toggle-add-task')" />
 	</header>
 </template>
 <script>

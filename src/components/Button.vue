@@ -6,7 +6,7 @@
 		name: 'Button',
 		methods: {
 			onClick(){
-				console.log('soy un boton xd');
+				this.$emit('toggle-add-task');
 			},
 		}
 
