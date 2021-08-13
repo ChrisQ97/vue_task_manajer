@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<h1>Task Manager</h1>
-		<Button @toggle-add-task="$emit('toggle-add-task')" />
+		<Button @toggle-add-task="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task' "/>
 	</header>
 </template>
 <script>
@@ -11,6 +11,9 @@ import Button from './Button.vue'
 		components: {
 			Button,
 		},
+		props: {
+			showAddTask: Boolean,
+		}
 		
 	}
 </script>

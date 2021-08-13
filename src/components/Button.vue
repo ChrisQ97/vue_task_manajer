@@ -1,5 +1,5 @@
 <template>
-	<button @click="onClick()">Add Task</button>
+	<button @click="onClick()"> {{text}} </button>
 </template>
 <script>
 	export default {
@@ -8,6 +8,9 @@
 			onClick(){
 				this.$emit('toggle-add-task');
 			},
+		},
+		props: {
+			text: String,
 		}
 
 	}
